@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width , initial-scale=1.0">
+        <title>Testimonial Page Design</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/22916baad5.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <div class="user-text">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Great app!. The only bug there is difficulty to navigate through the map. It will be great if the developers can either make the map easy to navigate through or use an entirely easy made map for locations on the app.</p>
+                        <span>Promise Ochonma</span>
+                    </div>
+
+                    <div class="user-text active-text">
+                        <i class="fas fa-quote-left"></i>
+                        <p>I'm so much excited with the launching of the app. App is giving me 100% vibes on good user-experience.</p>
+                        <span>Juliet Ibrahim</span>
+                    </div>
+
+                    <div class="user-text">
+                        <i class="fas fa-quote-left"></i>
+                        <p>I think is a great overall, the only real issue i've been dealing with is that after watching a reel or sometimes just a regular video, the feed resets when existed and i cycle through alot of the same posts.</p>
+                        <span>John Dumelo</span>
+                    </div>
+
+                    <div class="user-text">
+                        <i class="fas fa-quote-left"></i>
+                        <p>The only platform on my phone that launches multiple instances of itself. Can easily become resource consuming when using the app throughout the day. Most recommend platform in the world.</p>
+                        <span>Yvonne</span>
+
+                    </div>
+
+                </div>
+                <div class="testimonial-pic">
+                    <img src="images/chi.png" class="user-pic" onclick="showReview()">
+                    <img src="images/Juliet.png" class="user-pic active-pic" onclick="showReview()">
+                    <img src="images/john.png" class="user-pic" onclick="showReview()">
+                    <img src="images/yvonne.png" class="user-pic" onclick="showReview()">
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+            let userTexts = document.getElementsByClassName("user-text");
+            let userPics = document.getElementsByClassName("user-pic");
+
+            function showReview(){
+                for(userPic of userPics){
+                    userPic.classList.remove("active-pic");
+                }
+                for(userText of userTexts){
+                    userText.classList.remove("active-text");
+                }
+
+                let i = Array.from(userPics).indexOf(event.target);
+
+                userPics[i].classList.add("active-pic");
+                userTexts[i].classList.add("active-text");
+            }
+        </script>
+    </body>
+</html>
